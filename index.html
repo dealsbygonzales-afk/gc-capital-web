@@ -40,12 +40,35 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
-        .lion-icon {
-            font-size: 2.5rem;
-            font-weight: bold;
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.2), transparent);
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #FFD700;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .lion-logo {
+            font-size: 2.2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .logo-text {
@@ -113,15 +136,45 @@
             z-index: 1;
         }
 
-        .hero-lion {
-            font-size: 6rem;
-            margin-bottom: 2rem;
-            animation: bounce 3s infinite;
+        .hero-logo-container {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .hero-logo-circle {
+            width: 200px;
+            height: 200px;
+            border: 4px solid #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.1), transparent);
+            animation: spin 30s linear infinite;
+            box-shadow: 0 0 40px rgba(255,215,0,0.3), inset 0 0 40px rgba(255,215,0,0.1);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 2px solid #FFD700;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .hero-logo-inner {
+            font-size: 5rem;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -428,6 +481,20 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .hero-logo-circle {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-logo-circle::before {
+                width: 105px;
+                height: 105px;
+            }
+
+            .hero-logo-inner {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
@@ -436,7 +503,9 @@
     <header>
         <nav>
             <div class="logo-section">
-                <div class="lion-icon">🦁</div>
+                <div class="logo-circle">
+                    <div class="lion-logo">🦁</div>
+                </div>
                 <div class="logo-text">GC Capital</div>
             </div>
             <ul>
@@ -451,8 +520,12 @@
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-lion">🦁</div>
-            <h1>WE ARE<br>GC CAPITAL</h1>
+            <div class="hero-logo-container">
+                <div class="hero-logo-circle">
+                    <div class="hero-logo-inner">🦁</div>
+                </div>
+            </div>
+            <h1>GC CAPITAL</h1>
             <p class="subtitle">ELITE INVESTMENT STRATEGIES | MAXIMUM RETURNS</p>
             <a href="#contact" class="cta-button">Start Your Journey</a>
         </div>
@@ -465,8 +538,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Predatory. Sophisticated. Unstoppable.</h3>
-                    <p>GC Capital isn't just another investment firm. We are the wolves of the financial world—aggressive, strategic, and relentlessly focused on dominating every market we enter.</p>
-                    <p>Our team of elite traders and investment strategists operate with the precision of apex predators. We identify opportunities that others miss, execute with ruthless efficiency, and deliver returns that separate winners from losers.</p>
+                    <p>GC Capital isn't just another investment firm. We are the apex predators of the financial world—aggressive, strategic, and relentlessly focused on dominating every market we enter.</p>
+                    <p>Our team of elite traders and investment strategists operate with the precision of alpha hunters. We identify opportunities that others miss, execute with ruthless efficiency, and deliver returns that separate winners from losers.</p>
                     <h3 style="margin-top: 2rem;">The Lion Roars</h3>
                     <p>At GC Capital, we don't follow the herd. We lead it. Our strategies are bold, our executions are flawless, and our track record speaks for itself. This is high-stakes finance at its finest.</p>
                 </div>
