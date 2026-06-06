@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GC Capital - Investment Solutions</title>
+    <title>GC Capital - Elite Investment Firm</title>
     <style>
         * {
             margin: 0;
@@ -12,23 +12,24 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #fff;
+            background: #000;
         }
 
+        /* HEADER & NAV */
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 1rem 0;
+            background: #000;
+            border-bottom: 3px solid #FFD700;
             position: sticky;
             top: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 100;
+            z-index: 1000;
+            padding: 1.5rem 0;
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -36,204 +37,387 @@
             padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 1.8rem;
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lion-icon {
+            font-size: 2.5rem;
             font-weight: bold;
-            letter-spacing: 1px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #FFD700;
+            text-transform: uppercase;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: bold;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            color: #FFD700;
+            border-bottom-color: #FFD700;
         }
 
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 100px 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 50%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 2rem;
             text-align: center;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 215, 0, 0.03) 10px,
+                rgba(255, 215, 0, 0.03) 20px
+            );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-lion {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4.5rem;
+            font-weight: 900;
             margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #FFD700;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+        .hero .subtitle {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .cta-button {
             display: inline-block;
-            background: #f39c12;
-            color: white;
-            padding: 12px 30px;
+            background: #FFD700;
+            color: #000;
+            padding: 16px 40px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            font-weight: bold;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 3px solid #FFD700;
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            background: #e67e22;
+            background: transparent;
+            color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: #0a0a0a;
+            padding: 100px 2rem;
+            border-bottom: 3px solid #FFD700;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
         }
 
-        section {
-            padding: 60px 0;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 2.5rem;
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #FFD700;
             margin-bottom: 3rem;
-            color: #1e3c72;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: #FFD700;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-text h3 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .about-text p {
-            margin-bottom: 1rem;
-            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 1.5rem;
         }
 
+        .stats-box {
+            background: #FFD700;
+            color: #000;
+            padding: 3rem;
+            border-radius: 0;
+            text-align: center;
+            border: 3px solid #FFD700;
+        }
+
+        .stats-box h3 {
+            color: #000;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .stats-box p {
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* SERVICES SECTION */
         .services {
-            background: #f8f9fa;
+            background: #000;
+            padding: 100px 2rem;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .services .section-title {
+            text-align: center;
+        }
+
+        .services .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border: 2px solid #FFD700;
+            transition: all 0.3s;
             text-align: center;
-            transition: transform 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            background: #FFD700;
+            color: #000;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
 
-        .service-card h3 {
-            color: #1e3c72;
+        .service-card:hover h3 {
+            color: #000;
+        }
+
+        .service-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        .service-card p {
-            color: #666;
+        .service-card h3 {
+            color: #FFD700;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .contact-section {
-            background: #f8f9fa;
+        .service-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background: #0a0a0a;
+            padding: 100px 2rem;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .contact .section-title {
+            text-align: center;
+        }
+
+        .contact .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
+            margin-top: 3rem;
         }
 
-        .contact-info h3 {
-            color: #1e3c72;
-            margin-bottom: 1.5rem;
+        .contact-info h4 {
+            color: #FFD700;
             font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .contact-info p {
-            margin-bottom: 1rem;
-            color: #666;
+            color: #ddd;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
         }
 
         .contact-info strong {
             display: block;
             margin-top: 1.5rem;
-            color: #1e3c72;
+            color: #FFD700;
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            background: #1a1a1a;
+            border: 2px solid #FFD700;
+            color: #fff;
             font-family: inherit;
+            font-size: 1rem;
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 150px;
         }
 
         .contact-form button {
-            background: #1e3c72;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 4px;
+            background: #FFD700;
+            color: #000;
+            padding: 14px 35px;
+            border: 3px solid #FFD700;
             cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 900;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            width: 100%;
         }
 
         .contact-form button:hover {
-            background: #2a5298;
+            background: transparent;
+            color: #FFD700;
         }
 
+        /* FOOTER */
         footer {
-            background: #1e3c72;
-            color: white;
+            background: #000;
+            border-top: 3px solid #FFD700;
+            color: #fff;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 2.5rem;
         }
 
         footer p {
-            opacity: 0.9;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        footer .divider {
+            color: #FFD700;
+            margin: 0 1rem;
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .hero h1 {
-                font-size: 2rem;
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
             }
 
             .about-content,
@@ -241,17 +425,20 @@
                 grid-template-columns: 1fr;
             }
 
-            section h2 {
+            .section-title {
                 font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- HEADER -->
     <header>
         <nav>
-            <div class="logo">GC Capital</div>
+            <div class="logo-section">
+                <div class="lion-icon">🦁</div>
+                <div class="logo-text">GC Capital</div>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -261,109 +448,115 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero" id="home">
-        <h1>Welcome to GC Capital</h1>
-        <p>Your trusted partner for strategic investment solutions</p>
-        <a href="#contact" class="cta-button">Get In Touch</a>
+        <div class="hero-content">
+            <div class="hero-lion">🦁</div>
+            <h1>WE ARE<br>GC CAPITAL</h1>
+            <p class="subtitle">ELITE INVESTMENT STRATEGIES | MAXIMUM RETURNS</p>
+            <a href="#contact" class="cta-button">Start Your Journey</a>
+        </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- ABOUT -->
+    <section class="about" id="about">
         <div class="container">
-            <h2>About Us</h2>
+            <h2 class="section-title">Who We Are</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Who We Are</h3>
-                    <p>GC Capital is a leading investment firm dedicated to delivering exceptional financial solutions to our clients. With years of industry experience, we combine expertise, innovation, and strategic thinking to help you achieve your financial goals.</p>
-                    <p>Our team of seasoned professionals is committed to understanding your unique needs and providing tailored investment strategies that maximize returns while managing risk effectively.</p>
-                    <h3>Our Mission</h3>
-                    <p>To empower individuals and businesses through strategic capital management and investment solutions that generate long-term wealth and financial security.</p>
+                    <h3>Predatory. Sophisticated. Unstoppable.</h3>
+                    <p>GC Capital isn't just another investment firm. We are the wolves of the financial world—aggressive, strategic, and relentlessly focused on dominating every market we enter.</p>
+                    <p>Our team of elite traders and investment strategists operate with the precision of apex predators. We identify opportunities that others miss, execute with ruthless efficiency, and deliver returns that separate winners from losers.</p>
+                    <h3 style="margin-top: 2rem;">The Lion Roars</h3>
+                    <p>At GC Capital, we don't follow the herd. We lead it. Our strategies are bold, our executions are flawless, and our track record speaks for itself. This is high-stakes finance at its finest.</p>
                 </div>
-                <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border-radius: 8px; padding: 2rem; color: white; text-align: center; height: 100%;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
-                    <h3 style="color: white;">Proven Track Record</h3>
-                    <p style="margin-top: 1rem; opacity: 0.95;">Trusted by hundreds of clients with millions in managed assets</p>
+                <div class="stats-box">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🦁</div>
+                    <h3>APEX PREDATOR</h3>
+                    <p>Trusted by elite investors worldwide</p>
+                    <p style="margin-top: 1rem; font-size: 1.5rem;">$2.3B+ AUM</p>
+                    <p>Under Management</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2 class="section-title">Our Arsenal</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💼</div>
-                    <h3>Portfolio Management</h3>
-                    <p>Professional management of your investment portfolio tailored to your risk tolerance and financial goals.</p>
+                    <div class="service-icon">💼</div>
+                    <h3>Aggressive Trading</h3>
+                    <p>High-velocity market execution with precision-targeted strategies designed to capitalize on every market move.</p>
                 </div>
                 <div class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
-                    <h3>Investment Strategy</h3>
-                    <p>Custom investment strategies designed to optimize returns and align with your long-term objectives.</p>
+                    <div class="service-icon">📈</div>
+                    <h3>Portfolio Dominance</h3>
+                    <p>Strategic asset allocation that crushes market benchmarks and delivers outsized returns to our elite clients.</p>
                 </div>
                 <div class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏦</div>
-                    <h3>Wealth Planning</h3>
-                    <p>Comprehensive wealth planning services to secure your financial future and maximize wealth accumulation.</p>
+                    <div class="service-icon">🎯</div>
+                    <h3>Private Equity</h3>
+                    <p>Direct access to exclusive investment opportunities and venture plays that fuel exponential wealth growth.</p>
                 </div>
                 <div class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
-                    <h3>Financial Consulting</h3>
-                    <p>Expert financial advice and consulting to help you navigate complex investment decisions.</p>
+                    <div class="service-icon">🏆</div>
+                    <h3>Wealth Management</h3>
+                    <p>Elite-tier wealth preservation and growth strategies for ultra-high-net-worth individuals and institutions.</p>
                 </div>
                 <div class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
-                    <h3>Risk Assessment</h3>
-                    <p>Thorough risk analysis and assessment to ensure your investments align with your comfort level.</p>
+                    <div class="service-icon">⚡</div>
+                    <h3>Market Intelligence</h3>
+                    <p>Real-time market analysis and proprietary insights that keep you ahead of the competition.</p>
                 </div>
                 <div class="service-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
-                    <h3>Retirement Planning</h3>
-                    <p>Strategic retirement planning services to help you build and preserve wealth for retirement.</p>
+                    <div class="service-icon">💰</div>
+                    <h3>Legacy Building</h3>
+                    <p>Strategic planning to secure generational wealth and build an unstoppable financial dynasty.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2 class="section-title">Get In The Game</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>Have questions about our services? We'd love to hear from you. Reach out to our team today.</p>
+                    <h4>Command Center</h4>
+                    <p>Ready to join the elite? Contact our team today and discover what true investment excellence looks like.</p>
                     
-                    <strong>📍 Address</strong>
-                    <p>GC Capital Investment Group<br>123 Financial Plaza<br>New York, NY 10001</p>
+                    <strong>📍 Headquarters</strong>
+                    <p>GC Capital Investment Group<br>The Financial District<br>New York, NY 10005</p>
                     
-                    <strong>📞 Phone</strong>
-                    <p>+1 (555) 123-4567</p>
+                    <strong>📞 War Room</strong>
+                    <p>+1 (212) 555-WOLF</p>
                     
-                    <strong>📧 Email</strong>
-                    <p>info@gccapital.com</p>
+                    <strong>📧 Direct Line</strong>
+                    <p>elite@gccapital.com</p>
                     
-                    <strong>🕐 Hours</strong>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM EST<br>Saturday - Sunday: Closed</p>
+                    <strong>🕐 Market Hours</strong>
+                    <p>Monday - Friday: 6:00 AM - 10:00 PM EST<br>24/7 Emergency Line Available</p>
                 </div>
                 
                 <form class="contact-form">
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <input type="text" placeholder="Investment Interest">
+                    <textarea placeholder="Tell us about your ambitions..." required></textarea>
+                    <button type="submit">CLAIM YOUR SEAT</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 GC Capital. All rights reserved. | Privacy Policy | Terms of Service</p>
+        <p>🦁 GC CAPITAL 🦁</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 GC Capital Investment Group. <span class="divider">|</span> Where Predators Hunt <span class="divider">|</span> Risk Disclaimer</p>
     </footer>
 </body>
 </html>
