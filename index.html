@@ -3,633 +3,495 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GC Capital - Elite Investment Firm</title>
+    <title>GC Capital Group LLC — Real Estate. Redefined.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background: #000;
-        }
-
-        /* HEADER & NAV */
-        header {
-            background: #000;
-            border-bottom: 3px solid #FFD700;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1.5rem 0;
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-            border: 3px solid #FFD700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.2), transparent);
-        }
-
-        .logo-circle::before {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #FFD700;
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-
-        .lion-logo {
-            font-size: 2.2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            color: #FFD700;
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 5px;
-        }
-
-        nav a:hover {
-            color: #FFD700;
-            border-bottom-color: #FFD700;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 50%, #1a1a1a 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 120px 2rem;
-            text-align: center;
-            border-bottom: 3px solid #FFD700;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 215, 0, 0.03) 10px,
-                rgba(255, 215, 0, 0.03) 20px
-            );
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-logo-container {
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-logo-circle {
-            width: 200px;
-            height: 200px;
-            border: 4px solid #FFD700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.1), transparent);
-            animation: spin 30s linear infinite;
-            box-shadow: 0 0 40px rgba(255,215,0,0.3), inset 0 0 40px rgba(255,215,0,0.1);
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-logo-circle::before {
-            content: '';
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border: 2px solid #FFD700;
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-
-        .hero-logo-inner {
-            font-size: 5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #FFD700;
-            text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
-        }
-
-        .hero .subtitle {
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #FFD700;
-            color: #000;
-            padding: 16px 40px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            border: 3px solid #FFD700;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: #FFD700;
-            transform: scale(1.05);
-        }
-
-        /* ABOUT SECTION */
-        .about {
-            background: #0a0a0a;
-            padding: 100px 2rem;
-            border-bottom: 3px solid #FFD700;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #FFD700;
-            margin-bottom: 3rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100px;
-            height: 3px;
-            background: #FFD700;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            color: #FFD700;
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ddd;
-            margin-bottom: 1.5rem;
-        }
-
-        .stats-box {
-            background: #FFD700;
-            color: #000;
-            padding: 3rem;
-            border-radius: 0;
-            text-align: center;
-            border: 3px solid #FFD700;
-        }
-
-        .stats-box h3 {
-            color: #000;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .stats-box p {
-            color: #000;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        /* SERVICES SECTION */
-        .services {
-            background: #000;
-            padding: 100px 2rem;
-            border-bottom: 3px solid #FFD700;
-        }
-
-        .services .section-title {
-            text-align: center;
-        }
-
-        .services .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: #1a1a1a;
-            padding: 2.5rem;
-            border: 2px solid #FFD700;
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            background: #FFD700;
-            color: #000;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        }
-
-        .service-card:hover h3 {
-            color: #000;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #FFD700;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .service-card p {
-            color: #ccc;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        /* CONTACT SECTION */
-        .contact {
-            background: #0a0a0a;
-            padding: 100px 2rem;
-            border-bottom: 3px solid #FFD700;
-        }
-
-        .contact .section-title {
-            text-align: center;
-        }
-
-        .contact .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-info h4 {
-            color: #FFD700;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-info p {
-            color: #ddd;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-        }
-
-        .contact-info strong {
-            display: block;
-            margin-top: 1.5rem;
-            color: #FFD700;
-            font-weight: 900;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 1rem;
-            background: #1a1a1a;
-            border: 2px solid #FFD700;
-            color: #fff;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .contact-form button {
-            background: #FFD700;
-            color: #000;
-            padding: 14px 35px;
-            border: 3px solid #FFD700;
-            cursor: pointer;
-            font-weight: 900;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .contact-form button:hover {
-            background: transparent;
-            color: #FFD700;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #000;
-            border-top: 3px solid #FFD700;
-            color: #fff;
-            text-align: center;
-            padding: 2.5rem;
-        }
-
-        footer p {
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        footer .divider {
-            color: #FFD700;
-            margin: 0 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .hero-logo-circle {
-                width: 120px;
-                height: 120px;
-            }
-
-            .hero-logo-circle::before {
-                width: 105px;
-                height: 105px;
-            }
-
-            .hero-logo-inner {
-                font-size: 3rem;
-            }
-        }
+        body { font-family: 'Consolas', 'Courier New', monospace; scroll-behavior: smooth; }
+        .nav-link { transition: color 0.2s; }
+        .nav-link:hover { color: #4ade80; }
+        .section-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .section-fade.visible { opacity: 1; transform: translateY(0); }
+        .card-hover { transition: border-color 0.2s, transform 0.2s; }
+        .card-hover:hover { border-color: #4ade80; transform: translateY(-2px); }
+        .green-glow { text-shadow: 0 0 30px rgba(74, 222, 128, 0.3); }
+        .line-animate { width: 0; transition: width 1.2s ease; }
+        .line-animate.visible { width: 100%; }
     </style>
 </head>
-<body>
-    <!-- HEADER -->
-    <header>
-        <nav>
-            <div class="logo-section">
-                <div class="logo-circle">
-                    <div class="lion-logo">🦁</div>
-                </div>
-                <div class="logo-text">GC Capital</div>
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-950 text-gray-100 overflow-x-hidden">
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-logo-container">
-                <div class="hero-logo-circle">
-                    <div class="hero-logo-inner">🦁</div>
-                </div>
-            </div>
-            <h1>GC CAPITAL</h1>
-            <p class="subtitle">ELITE INVESTMENT STRATEGIES | MAXIMUM RETURNS</p>
-            <a href="#contact" class="cta-button">Start Your Journey</a>
+    <!-- ═══════════════════════════════════════════════
+         TOP STATUS BAR
+    ═══════════════════════════════════════════════ -->
+    <div class="bg-gray-900 border-b border-gray-800 px-6 py-2 flex justify-between items-center text-xs sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span class="text-gray-400 font-bold tracking-widest uppercase">GC Capital Group LLC — Operational</span>
         </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">Who We Are</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Predatory. Sophisticated. Unstoppable.</h3>
-                    <p>GC Capital isn't just another investment firm. We are the apex predators of the financial world—aggressive, strategic, and relentlessly focused on dominating every market we enter.</p>
-                    <p>Our team of elite traders and investment strategists operate with the precision of alpha hunters. We identify opportunities that others miss, execute with ruthless efficiency, and deliver returns that separate winners from losers.</p>
-                    <h3 style="margin-top: 2rem;">The Lion Roars</h3>
-                    <p>At GC Capital, we don't follow the herd. We lead it. Our strategies are bold, our executions are flawless, and our track record speaks for itself. This is high-stakes finance at its finest.</p>
-                </div>
-                <div class="stats-box">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🦁</div>
-                    <h3>APEX PREDATOR</h3>
-                    <p>Trusted by elite investors worldwide</p>
-                    <p style="margin-top: 1rem; font-size: 1.5rem;">$2.3B+ AUM</p>
-                    <p>Under Management</p>
-                </div>
-            </div>
+        <div class="hidden md:flex items-center space-x-6 text-gray-500 font-bold uppercase tracking-wider">
+            <a href="#sellers" class="nav-link">Sellers</a>
+            <a href="#buyers" class="nav-link">Buyers</a>
+            <a href="#investors" class="nav-link">Investors</a>
+            <a href="#careers" class="nav-link">Careers</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
         </div>
-    </section>
+    </div>
 
-    <!-- SERVICES -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Arsenal</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Aggressive Trading</h3>
-                    <p>High-velocity market execution with precision-targeted strategies designed to capitalize on every market move.</p>
+    <!-- ═══════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════ -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+
+        <!-- Background grid -->
+        <div class="absolute inset-0 bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+
+        <!-- Glow orb -->
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl space-y-8">
+
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 bg-gray-900 border border-gray-800 px-4 py-2 rounded text-[11px] font-bold uppercase tracking-widest text-emerald-400">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Pueblo, CO — Est. 2024</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-white green-glow leading-tight">
+                GC CAPITAL<br/>
+                <span class="text-emerald-400">GROUP LLC</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-bold">
+                Off-market real estate acquisition built on precision, speed, and structural intelligence.
+                We don't just close deals — we engineer them.
+            </p>
+
+            <!-- Divider line -->
+            <div class="flex items-center justify-center space-x-4">
+                <div class="h-px bg-gray-800 flex-1 max-w-24"></div>
+                <span class="text-xs text-gray-600 font-bold uppercase tracking-widest">Powered by Yield OS</span>
+                <div class="h-px bg-gray-800 flex-1 max-w-24"></div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#sellers" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black px-8 py-3.5 rounded uppercase tracking-wider text-sm transition shadow-lg shadow-emerald-950/50">
+                    I Have a Property
+                </a>
+                <a href="#buyers" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 font-black px-8 py-3.5 rounded uppercase tracking-wider text-sm transition">
+                    I'm a Cash Buyer
+                </a>
+            </div>
+
+            <!-- Stats bar -->
+            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-800 max-w-lg mx-auto">
+                <div class="text-center">
+                    <div class="text-2xl font-black text-white">$0</div>
+                    <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Fees to Sellers</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Portfolio Dominance</h3>
-                    <p>Strategic asset allocation that crushes market benchmarks and delivers outsized returns to our elite clients.</p>
+                <div class="text-center border-x border-gray-800">
+                    <div class="text-2xl font-black text-emerald-400">Fast</div>
+                    <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Cash Closings</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Private Equity</h3>
-                    <p>Direct access to exclusive investment opportunities and venture plays that fuel exponential wealth growth.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏆</div>
-                    <h3>Wealth Management</h3>
-                    <p>Elite-tier wealth preservation and growth strategies for ultra-high-net-worth individuals and institutions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Market Intelligence</h3>
-                    <p>Real-time market analysis and proprietary insights that keep you ahead of the competition.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💰</div>
-                    <h3>Legacy Building</h3>
-                    <p>Strategic planning to secure generational wealth and build an unstoppable financial dynasty.</p>
+                <div class="text-center">
+                    <div class="text-2xl font-black text-white">CO</div>
+                    <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Based & Operating</div>
                 </div>
             </div>
         </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 animate-bounce">
+            <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">Scroll</span>
+            <div class="h-6 w-px bg-gray-700"></div>
+        </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In The Game</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h4>Command Center</h4>
-                    <p>Ready to join the elite? Contact our team today and discover what true investment excellence looks like.</p>
-                    
-                    <strong>📍 Headquarters</strong>
-                    <p>GC Capital Investment Group<br>The Financial District<br>New York, NY 10005</p>
-                    
-                    <strong>📞 War Room</strong>
-                    <p>+1 (212) 555-WOLF</p>
-                    
-                    <strong>📧 Direct Line</strong>
-                    <p>elite@gccapital.com</p>
-                    
-                    <strong>🕐 Market Hours</strong>
-                    <p>Monday - Friday: 6:00 AM - 10:00 PM EST<br>24/7 Emergency Line Available</p>
+    <!-- ═══════════════════════════════════════════════
+         ABOUT / YIELD OS BRIDGE
+    ═══════════════════════════════════════════════ -->
+    <section class="py-24 px-6 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto section-fade">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">Who We Are</div>
+                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight">
+                        We are the operator.<br/>
+                        <span class="text-gray-500">Yield OS is our tool.</span>
+                    </h2>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        GC Capital Group LLC is a real estate wholesaling company based in Pueblo, Colorado.
+                        We source off-market distressed properties, negotiate directly with sellers,
+                        and connect deals to qualified cash buyers — fast.
+                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        We built Yield OS — our proprietary AI workflow system — to run every layer of this operation.
+                        From lead intake to contract dispatch, everything is automated, tracked, and optimized.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <div class="h-px bg-emerald-800 w-8"></div>
+                        <span class="text-xs text-gray-500 font-bold">Elijah Gonzales — CEO & Founder</span>
+                    </div>
                 </div>
-                
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Investment Interest">
-                    <textarea placeholder="Tell us about your ambitions..." required></textarea>
-                    <button type="submit">CLAIM YOUR SEAT</button>
-                </form>
+
+                <!-- System status card -->
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider border-b border-gray-800 pb-3">
+                        🧠 Yield OS — Live System Status
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Lead CRM Engine</span>
+                            <span class="text-emerald-400 font-bold">ACTIVE</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Deal Marketplace</span>
+                            <span class="text-emerald-400 font-bold">ACTIVE</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Outbound Messaging</span>
+                            <span class="text-emerald-400 font-bold">ACTIVE</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Contract Dispatcher</span>
+                            <span class="text-emerald-400 font-bold">ACTIVE</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400">Capital Router (Æon)</span>
+                            <span class="text-amber-400 font-bold">BUILDING</span>
+                        </div>
+                    </div>
+                    <div class="pt-2 border-t border-gray-800">
+                        <p class="text-[10px] text-gray-600 leading-relaxed">
+                            GC Capital runs entirely on Yield OS infrastructure. Every deal, lead, and contract flows through the system.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>🦁 GC CAPITAL 🦁</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 GC Capital Investment Group. <span class="divider">|</span> Where Predators Hunt <span class="divider">|</span> Risk Disclaimer</p>
+    <!-- ═══════════════════════════════════════════════
+         FOR SELLERS
+    ═══════════════════════════════════════════════ -->
+    <section id="sellers" class="py-24 px-6 bg-gray-900/40 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto section-fade">
+
+            <div class="text-center space-y-4 mb-16">
+                <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">01 — For Sellers</div>
+                <h2 class="text-3xl md:text-4xl font-black text-white">Need to sell your property fast?</h2>
+                <p class="text-sm text-gray-400 max-w-xl mx-auto leading-relaxed">
+                    No agents. No fees. No waiting. We buy houses directly — in any condition, on your timeline.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <div class="text-2xl">📞</div>
+                    <h3 class="font-black text-white uppercase tracking-wide text-sm">Step 1 — Tell Us About Your Property</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Fill out a quick form or call us directly. We assess your situation with zero pressure —
+                        your timeline, your terms.
+                    </p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <div class="text-2xl">🧮</div>
+                    <h3 class="font-black text-white uppercase tracking-wide text-sm">Step 2 — We Run the Numbers</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Our system calculates a fair cash offer using real market data — ARV, repairs, comps.
+                        No lowball games.
+                    </p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <div class="text-2xl">✍️</div>
+                    <h3 class="font-black text-white uppercase tracking-wide text-sm">Step 3 — Close on Your Schedule</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        We close fast — sometimes in days. You pick the date.
+                        We handle all the paperwork through our contract system.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gradient-to-r from-gray-900 to-emerald-950/30 border border-emerald-900/40 rounded-lg p-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-3">
+                        <h3 class="font-black text-white text-lg">Why Sellers Choose GC Capital</h3>
+                        <ul class="space-y-2 text-xs text-gray-400">
+                            <li class="flex items-center space-x-2"><span class="text-emerald-400 font-black">✔</span><span>No agent commissions — zero fees to you</span></li>
+                            <li class="flex items-center space-x-2"><span class="text-emerald-400 font-black">✔</span><span>Buy as-is — no repairs required</span></li>
+                            <li class="flex items-center space-x-2"><span class="text-emerald-400 font-black">✔</span><span>Cash offer — no financing delays</span></li>
+                            <li class="flex items-center space-x-2"><span class="text-emerald-400 font-black">✔</span><span>Flexible closing date — you decide</span></li>
+                            <li class="flex items-center space-x-2"><span class="text-emerald-400 font-black">✔</span><span>Local Pueblo, CO team — we know the market</span></li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <a href="mailto:gccapitalgrpllc@gmail.com" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-black px-8 py-4 rounded uppercase tracking-wider text-sm transition shadow-lg shadow-emerald-950/50">
+                            Get a Cash Offer →
+                        </a>
+                        <p class="text-[10px] text-gray-600 mt-3">(719) 620-3789 · gccapitalgrpllc@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FOR BUYERS & INVESTORS
+    ═══════════════════════════════════════════════ -->
+    <section id="buyers" class="py-24 px-6 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto section-fade">
+
+            <div class="text-center space-y-4 mb-16">
+                <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">02 — For Buyers & Investors</div>
+                <h2 class="text-3xl md:text-4xl font-black text-white">Off-market deals. Verified margins. Ready to assign.</h2>
+                <p class="text-sm text-gray-400 max-w-xl mx-auto leading-relaxed">
+                    We surface distressed properties before they hit the MLS. Every deal runs through our
+                    MAO calculator — you only see opportunities with real upside.
+                </p>
+            </div>
+
+            <!-- Deal example card -->
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+                <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Sample Deal Profile — Yield OS Verified</div>
+                <div class="grid md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-gray-950 border border-gray-800 rounded p-4">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase">After Repair Value</div>
+                        <div class="text-xl font-black text-white mt-1">$250,000</div>
+                    </div>
+                    <div class="bg-gray-950 border border-gray-800 rounded p-4">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase">Est. Repairs</div>
+                        <div class="text-xl font-black text-white mt-1">$30,000</div>
+                    </div>
+                    <div class="bg-gray-950 border border-gray-800 rounded p-4">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase">Asking Price</div>
+                        <div class="text-xl font-black text-white mt-1">$120,000</div>
+                    </div>
+                    <div class="bg-gray-950 border border-gray-800 rounded p-4">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase">Assignment Fee</div>
+                        <div class="text-xl font-black text-emerald-400 mt-1">$10,000</div>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center justify-between text-xs">
+                    <span class="text-gray-500">MAO (70% Rule): <span class="text-white font-bold">$145,000</span></span>
+                    <span class="bg-emerald-950 text-emerald-400 border border-emerald-900 px-3 py-1 rounded font-bold uppercase">Verified Viable</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <h3 class="font-black text-white uppercase tracking-wide text-sm">🏠 Fix & Flip Buyers</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        We find properties with strong ARV spreads in Pueblo and surrounding markets.
+                        Every deal is pre-screened for margin — you're not wasting time on bad numbers.
+                    </p>
+                    <div class="text-xs text-emerald-400 font-bold">Typical spread: $30K–$80K+ equity</div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <h3 class="font-black text-white uppercase tracking-wide text-sm">📊 Buy & Hold Investors</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Looking to build a rental portfolio in an undervalued market? Pueblo, CO is one of
+                        Colorado's most overlooked opportunities. We source the inventory.
+                    </p>
+                    <div class="text-xs text-emerald-400 font-bold">Below-market acquisition prices</div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="mailto:gccapitalgrpllc@gmail.com" class="inline-block bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 font-black px-8 py-4 rounded uppercase tracking-wider text-sm transition">
+                    Join Our Buyer Network →
+                </a>
+                <p class="text-[10px] text-gray-600 mt-3">Get notified when new deals hit our pipeline</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FOR FUTURE HIRES
+    ═══════════════════════════════════════════════ -->
+    <section id="careers" class="py-24 px-6 bg-gray-900/40 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto section-fade">
+
+            <div class="text-center space-y-4 mb-16">
+                <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">03 — Careers & Partnership</div>
+                <h2 class="text-3xl md:text-4xl font-black text-white">We're not hiring employees.<br/><span class="text-gray-500">We're building a team.</span></h2>
+                <p class="text-sm text-gray-400 max-w-xl mx-auto leading-relaxed">
+                    GC Capital is run lean and built to scale. If you're sharp, hungry, and want to own a piece
+                    of something real — this is your entry point.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <div class="flex items-center space-x-2">
+                        <div class="h-8 w-8 rounded bg-emerald-950 border border-emerald-900 flex items-center justify-center text-xs font-black text-emerald-400">CTO</div>
+                        <span class="text-xs text-gray-500 font-bold uppercase">Open Position</span>
+                    </div>
+                    <h3 class="font-black text-white text-sm">Chief Technology Officer</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Take ownership of Yield OS architecture. Security, scalability, production deployment.
+                        Equity-based. Built for someone who wants to build, not just maintain.
+                    </p>
+                    <div class="text-[10px] text-amber-400 font-bold uppercase">Equity Comp · Technical Co-Founder Track</div>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <div class="flex items-center space-x-2">
+                        <div class="h-8 w-8 rounded bg-gray-800 border border-gray-700 flex items-center justify-center text-xs font-black text-gray-400">ACQ</div>
+                        <span class="text-xs text-gray-500 font-bold uppercase">Open Position</span>
+                    </div>
+                    <h3 class="font-black text-white text-sm">Acquisitions Associate</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Source leads, talk to sellers, lock up contracts. You'll use Yield OS to run
+                        your entire pipeline. Commission-based with high upside.
+                    </p>
+                    <div class="text-[10px] text-emerald-400 font-bold uppercase">Commission + Performance Bonuses</div>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 space-y-4 card-hover">
+                    <div class="flex items-center space-x-2">
+                        <div class="h-8 w-8 rounded bg-gray-800 border border-gray-700 flex items-center justify-center text-xs font-black text-gray-400">OPS</div>
+                        <span class="text-xs text-gray-500 font-bold uppercase">Future Role</span>
+                    </div>
+                    <h3 class="font-black text-white text-sm">Operations Manager</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        As volume scales, we'll need someone to oversee transaction flow, vendor coordination,
+                        and system management. A role for a detail-oriented operator.
+                    </p>
+                    <div class="text-[10px] text-gray-500 font-bold uppercase">Coming Soon</div>
+                </div>
+            </div>
+
+            <!-- Values block -->
+            <div class="bg-gradient-to-r from-gray-900 to-emerald-950/20 border border-emerald-900/30 rounded-lg p-8 text-center space-y-4">
+                <h3 class="font-black text-white text-lg">What We Value</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-gray-400">
+                    <div class="space-y-1"><div class="text-emerald-400 font-black text-base">01</div><div class="font-bold uppercase">Precision</div></div>
+                    <div class="space-y-1"><div class="text-emerald-400 font-black text-base">02</div><div class="font-bold uppercase">Ownership</div></div>
+                    <div class="space-y-1"><div class="text-emerald-400 font-black text-base">03</div><div class="font-bold uppercase">Speed</div></div>
+                    <div class="space-y-1"><div class="text-emerald-400 font-black text-base">04</div><div class="font-bold uppercase">Integrity</div></div>
+                </div>
+                <a href="mailto:gccapitalgrpllc@gmail.com" class="inline-block mt-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-black px-8 py-3 rounded uppercase tracking-wider text-xs transition">
+                    Apply or Reach Out →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PRICING — INTENTIONALLY BLANK
+    ═══════════════════════════════════════════════ -->
+    <section id="pricing" class="py-24 px-6 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto section-fade text-center">
+
+            <div class="space-y-4 mb-16">
+                <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">04 — Pricing</div>
+                <h2 class="text-3xl md:text-4xl font-black text-white">Simple. Transparent. Coming Soon.</h2>
+                <p class="text-sm text-gray-400 max-w-xl mx-auto leading-relaxed">
+                    Our pricing structure is being finalized. What we can tell you — it will be built around
+                    mutual prosperity. No hidden fees. No surprises.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 space-y-6 opacity-60">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Tier 01</div>
+                    <div class="text-4xl font-black text-gray-600">—</div>
+                    <div class="text-xs text-gray-600 font-bold uppercase">Details Pending</div>
+                    <div class="h-px bg-gray-800"></div>
+                    <ul class="space-y-2 text-xs text-gray-600 text-left">
+                        <li>— Feature TBD</li>
+                        <li>— Feature TBD</li>
+                        <li>— Feature TBD</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 border border-emerald-900/50 rounded-lg p-8 space-y-6 relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider">Most Popular</div>
+                    <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Tier 02</div>
+                    <div class="text-4xl font-black text-gray-600">—</div>
+                    <div class="text-xs text-gray-600 font-bold uppercase">Details Pending</div>
+                    <div class="h-px bg-gray-800"></div>
+                    <ul class="space-y-2 text-xs text-gray-600 text-left">
+                        <li>— Feature TBD</li>
+                        <li>— Feature TBD</li>
+                        <li>— Feature TBD</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-8 space-y-6 opacity-60">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Tier 03</div>
+                    <div class="text-4xl font-black text-gray-600">—</div>
+                    <div class="text-xs text-gray-600 font-bold uppercase">Details Pending</div>
+                    <div class="h-px bg-gray-800"></div>
+                    <ul class="space-y-2 text-xs text-gray-600 text-left">
+                        <li>— Feature TBD</li>
+                        <li>— Feature TBD</li>
+                        <li>— Feature TBD</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="mt-8 text-xs text-gray-600">Pricing details will be announced. Get on the list to be notified first.</p>
+            <a href="mailto:gccapitalgrpllc@gmail.com" class="inline-block mt-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-400 font-black px-6 py-3 rounded uppercase tracking-wider text-xs transition">
+                Notify Me →
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════ -->
+    <footer class="border-t border-gray-900 bg-gray-950 py-12 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="text-lg font-black text-emerald-400 tracking-wider">GC CAPITAL GROUP LLC</div>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Real estate acquisition and wholesale operations based in Pueblo, CO.
+                        Built on Yield OS infrastructure.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">Navigate</div>
+                    <div class="space-y-2 text-xs text-gray-500">
+                        <div><a href="#sellers" class="nav-link">For Sellers</a></div>
+                        <div><a href="#buyers" class="nav-link">For Buyers & Investors</a></div>
+                        <div><a href="#careers" class="nav-link">Careers & Partnership</a></div>
+                        <div><a href="#pricing" class="nav-link">Pricing</a></div>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">Contact</div>
+                    <div class="space-y-2 text-xs text-gray-500">
+                        <div>(719) 620-3789</div>
+                        <div>gccapitalgrpllc@gmail.com</div>
+                        <div>Pueblo, CO, USA</div>
+                        <div class="text-emerald-400 font-bold">Yield OS — Internal Platform</div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-bold uppercase tracking-wider">
+                <span>© 2024 GC Capital Group LLC — All Rights Reserved</span>
+                <span class="mt-2 md:mt-0">Powered by Yield OS · Built by Elijah Gonzales</span>
+            </div>
+        </div>
     </footer>
+
+    <!-- ═══════════════════════════════════════════════
+         SCROLL ANIMATIONS
+    ═══════════════════════════════════════════════ -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+    </script>
+
 </body>
 </html>
